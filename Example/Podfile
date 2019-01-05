@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SWDownloadPlayButton_Example' do
+  pod 'SWDownloadPlayButton', :path => '../'
+
+  target 'SWDownloadPlayButton_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

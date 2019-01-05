@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SWDownloadPlayButton'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SWDownloadPlayButton.'
+  s.summary          = 'A customizable download and play button for downlaoding before playing a file'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A Fork of the nice customizable AHDownloadButton. I needed more states and no text buttons but only icons.
                        DESC
 
   s.homepage         = 'https://github.com/jr00n/SWDownloadPlayButton'

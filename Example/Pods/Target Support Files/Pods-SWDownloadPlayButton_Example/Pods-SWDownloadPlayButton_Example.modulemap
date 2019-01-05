@@ -1,0 +1,6 @@
+framework module Pods_SWDownloadPlayButton_Example {
+  umbrella header "Pods-SWDownloadPlayButton_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

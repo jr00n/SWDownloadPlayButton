@@ -7,18 +7,74 @@
 //
 
 import UIKit
+import SWDownloadPlayButton
 
 class ViewController: UIViewController {
 
+    var downloadTimer: Timer?
+    let playButton = SWDownloadPlayButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = .white
+        
+        let width: CGFloat = 120
+        let size = CGSize(width: width, height: width )
+        let origin = CGPoint(x: view.center.x - size.width / 2, y: view.center.y - size.height / 2)
+        playButton.frame = CGRect(origin: origin, size: size)
+        view.addSubview(playButton)
+        playButton.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func simulateDownloading() {
+        downloadTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
+            guard self.playButton.progress < 1 else {
+                self.playButton.state = .downloaded
+                timer.invalidate()
+                return
+            }
+            self.playButton.progress += CGFloat(timer.timeInterval/2)
+            print("percentage: \(self.playButton.progress)")
+        }
+        downloadTimer?.fire()
     }
+    
+    
+}
 
+extension ViewController: SWDownloadPlayButtonDelegate {
+    
+    func didTapPlayButton(withState state: SWDownloadPlayButton.State) {
+        switch state {
+        case .startDownload:
+            downloadTimer?.invalidate()
+            playButton.progress = 0
+            playButton.state = .pending
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.playButton.state = .downloading
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    self.simulateDownloading()
+                }
+            }
+            
+            
+        case .pending:
+            break
+        case .downloading:
+            downloadTimer?.invalidate()
+            playButton.progress = 0
+            playButton.state = .startDownload
+        case .downloaded:
+            playButton.state = .playing
+        case .playing:
+            playButton.state = .paused
+            break
+        case .paused:
+            playButton.state = .playing
+        }
+    }
+    
 }
 

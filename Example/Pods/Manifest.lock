@@ -1,0 +1,16 @@
+PODS:
+  - SWDownloadPlayButton (0.1.0)
+
+DEPENDENCIES:
+  - SWDownloadPlayButton (from `../`)
+
+EXTERNAL SOURCES:
+  SWDownloadPlayButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SWDownloadPlayButton: d73c8bc7ffdd3dc14041ee459edde70bcbdd8cd5
+
+PODFILE CHECKSUM: eb40a7646165889c7f964d7400c62cad3d8b8314
+
+COCOAPODS: 1.6.0.beta.2

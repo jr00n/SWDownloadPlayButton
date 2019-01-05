@@ -26,17 +26,16 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jr00n' => 'jeroen.wolff@gmail.com' }
   s.source           = { :git => 'https://github.com/jr00n/SWDownloadPlayButton.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/jr00n'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SWDownloadPlayButton/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SWDownloadPlayButton' => ['SWDownloadPlayButton/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'SWDownloadPlayButton' => ['SWDownloadPlayButton/Assets/Assets.xcassets']
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.swift_version = '4.2'
 end

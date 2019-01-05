@@ -1,0 +1,29 @@
+{
+  "name": "SWDownloadPlayButton",
+  "version": "0.1.0",
+  "summary": "A short description of SWDownloadPlayButton.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jr00n/SWDownloadPlayButton",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jr00n": "jeroen.wolff@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jr00n/SWDownloadPlayButton.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SWDownloadPlayButton/Classes/**/*",
+  "resource_bundles": {
+    "SWDownloadPlayButton": [
+      "SWDownloadPlayButton/Assets/Assets.xcassets"
+    ]
+  },
+  "frameworks": "UIKit",
+  "swift_version": "4.2"
+}

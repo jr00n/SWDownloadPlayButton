@@ -1,0 +1,6 @@
+framework module SWDownloadPlayButton {
+  umbrella header "SWDownloadPlayButton-umbrella.h"
+
+  export *
+  module * { export * }
+}
